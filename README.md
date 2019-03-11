@@ -15,7 +15,7 @@ npm install --save react-contactcard
 ```jsx
 import React, { Component } from "react";
 
-import MyComponent from "react-contactcard";
+import ContactCard from "react-contactcard";
 
 class Example extends Component {
   render() {
