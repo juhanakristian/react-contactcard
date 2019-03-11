@@ -1,22 +1,31 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import React, { Component } from "react";
+import PropTypes from "prop-types";
 
-import styles from './styles.css'
+import styles from "./styles.css";
 
-export default class ExampleComponent extends Component {
+export default class ContactCard extends Component {
   static propTypes = {
-    text: PropTypes.string
-  }
+    fullName: PropTypes.string,
+    title: PropTypes.string,
+    phone: PropTypes.string,
+    email: PropTypes.string,
+    profilePicture: PropTypes.string
+  };
 
   render() {
-    const {
-      text
-    } = this.props
+    const { fullName, title, phone, email, profilePicture } = this.props;
 
     return (
-      <div className={styles.test}>
-        Example Component: {text}
+      <div className={styles.card}>
+        <div className={styles.profilePicture} />
+        <div className={styles.content}>
+          <div className={styles.icons} />
+          <h1>{fullName}</h1>
+          <h2>{title}</h2>
+          <h2>{email}</h2>
+          <h2>{phone}</h2>
+        </div>
       </div>
-    )
+    );
   }
 }

@@ -1,13 +1,18 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
-import ExampleComponent from 'react-contactcard'
+import ContactCard from "react-contactcard";
 
 export default class App extends Component {
-  render () {
+  render() {
     return (
-      <div>
-        <ExampleComponent text='Modern React component module' />
+      <div style={{maxWidth: 500}}>
+        <ContactCard
+          fullName="John Smith"
+          title="Front end developer"
+          email="john@example.com"
+          phone="+555 4321"
+        />
       </div>
-    )
+    );
   }
 }
