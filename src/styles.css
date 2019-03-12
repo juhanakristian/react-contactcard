@@ -7,20 +7,17 @@
 }
 
 .profilePicture {
-  min-width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
   background-color: darkgray;
+  overflow: hidden;
 }
 
-@media (min-width: 320px) and (max-width: 480px) {
-  .card {
-    height: 100px;
-  }
-  .profilePicture{
-    min-width: 100px;
-  }
-}
-
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   margin-top: 5px;
   margin-bottom: 5px;
 }
@@ -38,4 +35,23 @@ h2 {
 .content {
   flex-grow: 1;
   padding-left: 10px;
+}
+
+@media (max-width: 480px) {
+  .card {
+    height: 100px;
+  }
+  .profilePicture {
+    min-width: 100px;
+  }
+
+  h1 {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  h2 {
+    font-size: 0.8rem;
+    font-weight: 400;
+  }
 }

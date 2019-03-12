@@ -7,10 +7,11 @@ export default class App extends Component {
     return (
       <div style={{maxWidth: 500}}>
         <ContactCard
-          fullName="John Smith"
-          title="Front end developer"
-          email="john@example.com"
+          fullName="Abraham Lincoln"
+          title="Boxer, President of the United States"
+          email="abe@whitehouse.gov"
           phone="+555 4321"
+          profilePicture="abraham-lincoln.jpg"
         />
       </div>
     );
