@@ -35,7 +35,7 @@ export default class ContactCard extends Component {
 
     return (
       <div className={styles.card}>
-        <div className={styles.profilePicture}>
+        <div className={styles.photo}>
           <img src={photo} />
         </div>
         <div className={styles.content}>

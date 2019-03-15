@@ -1,12 +1,11 @@
 /* add css styles here (optional) */
 .card {
   display: flex;
-  height: 150px;
   border: 1px solid #000;
   margin: 10px;
 }
 
-.profilePicture {
+.photo {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -39,10 +38,10 @@ h2 {
 
 @media (max-width: 480px) {
   .card {
-    height: 100px;
+    max-height: 120px;
   }
-  .profilePicture {
-    min-width: 100px;
+  .photo {
+    max-width: 120px;
   }
 
   h1 {
@@ -51,7 +50,7 @@ h2 {
   }
 
   h2 {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     font-weight: 400;
   }
 }
