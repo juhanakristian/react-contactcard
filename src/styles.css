@@ -1,17 +1,25 @@
 /* add css styles here (optional) */
 .card {
+  max-width: 400px;;
   display: flex;
-  border: 1px solid #000;
+  border: 1px solid #fff;
+  background-color: #fafafa;
   margin: 10px;
+  box-shadow: 1px 1px 8px #666;
 }
 
 .photo {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 150px;
-  background-color: darkgray;
+  width: 120px;
+  background-color: #f0f0f0;
   overflow: hidden;
+}
+.photo img {
+  width: 80px;
+  height: 80px;
+  border-radius: 80px;
 }
 
 h1,
@@ -22,18 +30,45 @@ h3 {
 }
 
 h1 {
-  font-size: 1.4rem;
+  font-size: 0.8rem;
   font-weight: 600;
 }
 
 h2 {
-  font-size: 1.0rem;
+  font-size: 0.7rem;
   font-weight: 400;
 }
 
 .content {
   flex-grow: 1;
+  padding: 5px;
   padding-left: 10px;
+}
+
+.icons {
+  display: flex;
+  justify-content: center;
+  width: 42px;
+  padding-top: 5px;
+}
+
+.iconbutton {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ebebeb;
+  height: 32px;
+  width: 32px;
+  border-radius: 16px;
+  cursor: pointer;
+}
+
+.iconbutton:hover {
+  background-color: #e3e3e3;
+}
+
+.iconbutton:active {
+  background-color: #d3d3d3;
 }
 
 @media (max-width: 480px) {
@@ -42,6 +77,11 @@ h2 {
   }
   .photo {
     max-width: 120px;
+  }
+  .photo img {
+    width: 100px;
+    height: 100px;
+    border-radius: 80px;
   }
 
   h1 {
