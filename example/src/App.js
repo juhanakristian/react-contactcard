@@ -23,6 +23,7 @@ export default class App extends Component {
           address={address}
           organization="United States Goverment"
           photo="abraham-lincoln.jpg"
+          socialLinks={{"twitter":"https://twitter.com/abe_lincoln"}}
         />
       </div>
     );

@@ -3,6 +3,11 @@ import PropTypes from "prop-types";
 
 import styles from "./styles.css";
 
+import { ReactComponent as LinkedIn } from "./icons/linkedin.svg";
+import { ReactComponent as Facebook } from "./icons/facebook.svg";
+import { ReactComponent as Twitter } from "./icons/twitter.svg";
+import { ReactComponent as Download } from "./icons/download.svg";
+
 const AddContactIcon = props => {
   return (
     <svg
@@ -25,11 +30,13 @@ export default class ContactCard extends Component {
     phonenumber: PropTypes.object,
     address: PropTypes.object,
     email: PropTypes.string,
-    visibleFields: PropTypes.array
+    visibleFields: PropTypes.array,
+    socialLinks: PropTypes.object
   };
 
   static defaultProps = {
-    visibleFields: ["title", "organization", "phonenumber", "address", "email"]
+    visibleFields: ["title", "organization", "phonenumber", "address", "email"],
+    socialLinks: {}
   };
 
   render() {
@@ -41,8 +48,11 @@ export default class ContactCard extends Component {
       address,
       email,
       photo,
-      visibleFields
+      visibleFields,
+      socialLinks
     } = this.props;
+
+    const socialIcons = Object.keys(socialLinks);
 
     return (
       <div className={styles.card}>
@@ -61,8 +71,29 @@ export default class ContactCard extends Component {
         </div>
         <div className={styles.icons}>
           <div className={styles.iconbutton}>
-            <AddContactIcon />
+            <Download />
           </div>
+          {socialIcons.includes("linkedin") && (
+            <div className={styles.iconbutton}>
+              <a href={socialLinks.linkedin}>
+                <LinkedIn />
+              </a>
+            </div>
+          )}
+          {socialIcons.includes("facebook") && (
+            <div className={styles.iconbutton}>
+              <a href={socialLinks.facebook}>
+                <Facebook />
+              </a>
+            </div>
+          )}
+          {socialIcons.includes("twitter") && (
+            <div className={styles.iconbutton}>
+              <a href={socialLinks.twitter}>
+                <Twitter />
+              </a>
+            </div>
+          )}
         </div>
       </div>
     );

@@ -32,6 +32,7 @@ h3 {
 h1 {
   font-size: 0.8rem;
   font-weight: 600;
+  margin-top: 0px;
 }
 
 h2 {
@@ -47,24 +48,13 @@ h2 {
 
 .icons {
   display: flex;
-  justify-content: center;
-  width: 42px;
   padding-top: 5px;
+  padding-right: 10px;
+  flex-direction: column;
 }
 
 .iconbutton {
-  display:flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #ebebeb;
-  height: 32px;
-  width: 32px;
-  border-radius: 16px;
   cursor: pointer;
-}
-
-.iconbutton:hover {
-  background-color: #e3e3e3;
 }
 
 .iconbutton:active {
@@ -85,12 +75,12 @@ h2 {
   }
 
   h1 {
-    font-size: 1rem;
+    font-size: 0.7rem;
     font-weight: 600;
   }
 
   h2 {
-    font-size: 0.75rem;
+    font-size: 0.6rem;
     font-weight: 400;
   }
 }
