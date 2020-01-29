@@ -14,7 +14,18 @@ export default class App extends Component {
     };
 
     return (
-      <div >
+      <div style={{display: "flex", flexWrap: "wrap"}}>
+        <ContactCard
+          fullName="George Washington"
+          title="President of the United States"
+          email="abe@whitehouse.gov"
+          phonenumber={phonenumber}
+          address={address}
+          organization="United States Goverment"
+          photo="abraham-lincoln.jpg"
+          socialLinks={{"twitter":"https://twitter.com/abe_lincoln",
+                        "facebook": "", "instagram":"", "linkedin": ""}}
+        />
         <ContactCard
           fullName="Abraham Lincoln"
           title="President of the United States"
@@ -23,7 +34,9 @@ export default class App extends Component {
           address={address}
           organization="United States Goverment"
           photo="abraham-lincoln.jpg"
-          socialLinks={{"twitter":"https://twitter.com/abe_lincoln"}}
+          backgroundColor="#B22234"
+          textColor="white"
+          primaryColor="#3C3B6E"
         />
       </div>
     );

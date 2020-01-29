@@ -1,12 +1,13 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
-import styles from "./styles.css";
+import classNames from "classnames";
 
-import { ReactComponent as LinkedIn } from "./icons/linkedin.svg";
-import { ReactComponent as Facebook } from "./icons/facebook.svg";
-import { ReactComponent as Twitter } from "./icons/twitter.svg";
-import { ReactComponent as Download } from "./icons/download.svg";
+import styles from './styles.css';
+
+import { ReactComponent as DownloadIcon } from './icons/download.svg';
+
+import {TwitterIcon, FacebookIcon, LinkedInIcon} from "./socialicons.js";
 
 export default class ContactCard extends Component {
   static propTypes = {
@@ -18,12 +19,25 @@ export default class ContactCard extends Component {
     address: PropTypes.object,
     email: PropTypes.string,
     visibleFields: PropTypes.array,
-    socialLinks: PropTypes.object
+    socialLinks: PropTypes.object,
+    classes: PropTypes.object,
+    primaryColor: PropTypes.string,
+    textColor: PropTypes.string,
+    backgroundColor: PropTypes.string
   };
 
   static defaultProps = {
-    visibleFields: ["title", "organization", "phonenumber", "address", "email"],
-    socialLinks: {}
+    visibleFields: ['title', 'organization', 'phonenumber', 'address', 'email'],
+    socialLinks: {},
+    classes: {
+      card: "",
+      photo: "",
+      content: "",
+      icons: ""
+    },
+    primaryColor: "#f0f0f0",
+    textColor: "#000000",
+    backgroundColor: "#ffffff"
   };
 
   render() {
@@ -36,48 +50,53 @@ export default class ContactCard extends Component {
       email,
       photo,
       visibleFields,
-      socialLinks
+      socialLinks,
+      classes,
+      primaryColor,
+      textColor,
+      backgroundColor
     } = this.props;
 
     const socialIcons = Object.keys(socialLinks);
 
+
     return (
-      <div className={styles.card}>
-        <div className={styles.photo}>
+      <div className={classNames(styles.card, classes.card)}
+      style={{backgroundColor}}>
+        <div className={classNames(styles.photo, classes.photo)}
+             style={{backgroundColor: primaryColor}}>
           <img src={photo} />
         </div>
-        <div className={styles.content}>
+        <div className={classNames(styles.content, classes.content)}
+             style={{color: textColor}}>
           <h1>{fullName}</h1>
-          {visibleFields.includes("title") && <h2>{title}</h2>}
-          {visibleFields.includes("organization") && <h2>{organization}</h2>}
-          {visibleFields.includes("email") && <h2>{email}</h2>}
-          {visibleFields.includes("phonenumber") && (
+          {visibleFields.includes('title') && <h2>{title}</h2>}
+          {visibleFields.includes('organization') && <h2>{organization}</h2>}
+          {visibleFields.includes('email') && <h2>{email}</h2>}
+          {visibleFields.includes('phonenumber') && (
             <h2>{phonenumber.value}</h2>
           )}
-          {visibleFields.includes("address") && <h2>{address.value}</h2>}
+          {visibleFields.includes('address') && <h2>{address.value}</h2>}
         </div>
-        <div className={styles.icons}>
-          <div className={styles.iconbutton}>
-            <Download />
-          </div>
-          {socialIcons.includes("linkedin") && (
+        <div className={classNames(styles.icons, classes.icons)}>
+          {socialIcons.includes('linkedin') && (
             <div className={styles.iconbutton}>
               <a href={socialLinks.linkedin}>
-                <LinkedIn />
+                <LinkedInIcon />
               </a>
             </div>
           )}
-          {socialIcons.includes("facebook") && (
+          {socialIcons.includes('facebook') && (
             <div className={styles.iconbutton}>
               <a href={socialLinks.facebook}>
-                <Facebook />
+                <FacebookIcon />
               </a>
             </div>
           )}
-          {socialIcons.includes("twitter") && (
-            <div className={styles.iconbutton}>
+          {socialIcons.includes('twitter') && (
+            <div className={classNames(styles.iconbutton, styles.twitter)}>
               <a href={socialLinks.twitter}>
-                <Twitter />
+                <TwitterIcon />
               </a>
             </div>
           )}
